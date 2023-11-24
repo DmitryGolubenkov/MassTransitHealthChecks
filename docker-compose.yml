@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+    rabbitmq:
+        image: rabbitmq:3-management
+        ports:
+            - "9999:5672"
+            - "15672:15672"
+        environment:
+            RABBITMQ_DEFAULT_USER: guest
+            RABBITMQ_DEFAULT_PASS: guest
+
+
+    # kafka with kraft
+    kafka:
+        image: bitnami/kafka:latest
+        ports:
+        - "9094:9094"
+        environment:
+            - KAFKA_CFG_NODE_ID=0
+            - KAFKA_CFG_PROCESS_ROLES=controller,broker
+            - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+            - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+            - KAFKA_CFG_LISTENERS=CONTROLLER://:9093,EXTERNAL://:9094
+            - KAFKA_CFG_ADVERTISED_LISTENERS=EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9094
+            - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT
+            #- KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE:true
+            #- KAFKA_CLIENT_USERS=kafka
+            #- KAFKA_CLIENT_PASSWORDS=kafka
+            - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=EXTERNAL
+            - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
+            - KAFKA_INTER_BROKER_USER=controller_user
+            - KAFKA_INTER_BROKER_PASSWORD=controller_password
+            #- KAFKA_AUTHORIZER_CLASS_NAME=kafka.security.authorizer.StandardAuthorizer
+            #- KAFKA_SUPER_USERS=User:broker;User:admin
+            #- KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND=false
+
+
+            

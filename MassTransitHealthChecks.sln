@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitHealthChecks.Consumer", "MassTransitHealthChecks.Consumer\MassTransitHealthChecks.Consumer.csproj", "{F8C06FD6-915B-44B2-B7D4-15CDB9C3000D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution folder", "Solution folder", "{F159CA3B-5061-41DD-B91A-3C58D7B67256}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit", "MassTransit\src\MassTransit\MassTransit.csproj", "{39D09B49-9ACF-4D32-9EBD-572899203F61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.Abstractions", "MassTransit\src\MassTransit.Abstractions\MassTransit.Abstractions.csproj", "{498DFF13-370B-4933-B1D4-0D3CB70BB7E6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.KafkaIntegration", "MassTransit\src\Transports\MassTransit.KafkaIntegration\MassTransit.KafkaIntegration.csproj", "{2E5B30DC-26ED-4272-9313-A0D144CDBD1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MassTransit.RabbitMqTransport", "MassTransit\src\Transports\MassTransit.RabbitMqTransport\MassTransit.RabbitMqTransport.csproj", "{6A893D0B-6E2F-4190-BAA7-2AFC16BE8C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8C06FD6-915B-44B2-B7D4-15CDB9C3000D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C06FD6-915B-44B2-B7D4-15CDB9C3000D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C06FD6-915B-44B2-B7D4-15CDB9C3000D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C06FD6-915B-44B2-B7D4-15CDB9C3000D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D09B49-9ACF-4D32-9EBD-572899203F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D09B49-9ACF-4D32-9EBD-572899203F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D09B49-9ACF-4D32-9EBD-572899203F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D09B49-9ACF-4D32-9EBD-572899203F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{498DFF13-370B-4933-B1D4-0D3CB70BB7E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{498DFF13-370B-4933-B1D4-0D3CB70BB7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{498DFF13-370B-4933-B1D4-0D3CB70BB7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{498DFF13-370B-4933-B1D4-0D3CB70BB7E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E5B30DC-26ED-4272-9313-A0D144CDBD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5B30DC-26ED-4272-9313-A0D144CDBD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5B30DC-26ED-4272-9313-A0D144CDBD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5B30DC-26ED-4272-9313-A0D144CDBD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A893D0B-6E2F-4190-BAA7-2AFC16BE8C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A893D0B-6E2F-4190-BAA7-2AFC16BE8C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A893D0B-6E2F-4190-BAA7-2AFC16BE8C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A893D0B-6E2F-4190-BAA7-2AFC16BE8C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92AF8D2F-E594-4181-8A50-A360BFDA2685}
+	EndGlobalSection
+EndGlobal
